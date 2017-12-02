@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var letterView : LetterView!
+    var sealed : Bool = false // is the letter sealed?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +39,28 @@ class ViewController: UIViewController {
     }
     
     // Called when "envelope" button pressed
-    @IBAction func sealEnvelope(_ sender: Any) {
+    @IBAction func sealEnvelope(_ sender: UIBarButtonItem) {
+        // toggle between icons
+        if(sealed){
+            sender.image = UIImage(named: "envelope_closed")
+            sealed = false
+        } else {
+            sender.image = UIImage(named: "envelope")
+            sealed = true
+            moveLetter(yTarget: letterView.frame.height-150)
+        }
         
-        
+        print("image changed")
+    }
+    
+    func moveLetter(yTarget: CGFloat){
+        // animate the letter - move down
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            let x = self.letterView!.frame.origin.x
+            print("\(x)")
+            let location = CGPoint(x: x,y: yTarget)
+            self.letterView!.frame.origin = location
+        }, completion: nil)
     }
     
 }
