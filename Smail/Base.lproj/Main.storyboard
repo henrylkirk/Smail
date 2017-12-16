@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,20 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="envelope_Back_Bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="C8b-4c-vr7">
-                                <rect key="frame" x="-105" y="201" width="585" height="335"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope_Back_Bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="C8b-4c-vr7">
+                                <rect key="frame" x="0.0" y="338" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="k0y-TP-zjC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope_Back_Top.png" translatesAutoresizingMaskIntoConstraints="NO" id="TA4-8l-QIx">
+                                <rect key="frame" x="0.0" y="403" width="375" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="q93-yc-FEd"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yja-Ec-u12" customClass="LetterView" customModule="Smail" customModuleProvider="target">
                                 <rect key="frame" x="21" y="30" width="333" height="566"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.29863980150000002" green="0.3777320341" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="envelope_Back_Top.png" translatesAutoresizingMaskIntoConstraints="NO" id="TA4-8l-QIx">
-                                <rect key="frame" x="-105" y="282" width="585" height="335"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-JE-qWw">
+                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-JE-qWw">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem image="delete.png" id="29Q-05-2eA">
@@ -63,16 +67,27 @@
                         <constraints>
                             <constraint firstItem="EPb-JE-qWw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="3ND-zK-xSO"/>
                             <constraint firstAttribute="trailing" secondItem="EPb-JE-qWw" secondAttribute="trailing" id="5dg-f8-Su4"/>
+                            <constraint firstItem="TA4-8l-QIx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CZr-Fw-GAd"/>
                             <constraint firstItem="EPb-JE-qWw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DQ8-4c-j6O"/>
+                            <constraint firstItem="TA4-8l-QIx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F5A-Wd-aZm"/>
                             <constraint firstItem="EPb-JE-qWw" firstAttribute="centerX" secondItem="yja-Ec-u12" secondAttribute="centerX" id="IYw-BQ-mzI"/>
+                            <constraint firstItem="C8b-4c-vr7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Npb-nH-BLp"/>
                             <constraint firstItem="yja-Ec-u12" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="Qhb-rU-zb8"/>
                             <constraint firstItem="yja-Ec-u12" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20.5" id="W5v-VT-HaP"/>
                             <constraint firstItem="yja-Ec-u12" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zlx-4C-MUE"/>
+                            <constraint firstItem="EPb-JE-qWw" firstAttribute="top" secondItem="TA4-8l-QIx" secondAttribute="bottom" id="b1v-HT-0Re"/>
                             <constraint firstItem="yja-Ec-u12" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="g3A-y0-Qfx"/>
+                            <constraint firstItem="C8b-4c-vr7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iN0-MT-DSl"/>
+                            <constraint firstItem="EPb-JE-qWw" firstAttribute="top" secondItem="C8b-4c-vr7" secondAttribute="bottom" constant="60" id="rrU-y4-7o3"/>
+                            <constraint firstAttribute="trailing" secondItem="TA4-8l-QIx" secondAttribute="trailing" id="w6V-Ka-tfe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="envelopeBackTop" destination="TA4-8l-QIx" id="l8G-Kw-Wiy"/>
                         <outlet property="letterView" destination="yja-Ec-u12" id="q6A-PM-Ikq"/>
+                        <outlet property="rootView" destination="8bC-Xf-vdC" id="ZrI-TQ-yxv"/>
+                        <outlet property="toolbar" destination="EPb-JE-qWw" id="fgL-cw-9m3"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="k3g-XC-XDR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,8 +97,8 @@
     </scenes>
     <resources>
         <image name="delete.png" width="32" height="32"/>
-        <image name="envelope_Back_Bottom.png" width="1480" height="1313"/>
-        <image name="envelope_Back_Top.png" width="1480" height="1313"/>
+        <image name="envelope_Back_Bottom.png" width="717" height="639"/>
+        <image name="envelope_Back_Top.png" width="716" height="416"/>
         <image name="envelope_closed.png" width="32" height="32"/>
         <image name="share.png" width="32" height="32"/>
     </resources>

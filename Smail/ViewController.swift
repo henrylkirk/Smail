@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var envelopeBackTop: UIImageView!
+    @IBOutlet var rootView: UIView!
     @IBOutlet weak var letterView : LetterView!
     var sealed : Bool = false // is the letter sealed?
     
+    // Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         letterView?.backgroundColor = UIColor.blue
     }
     
@@ -46,21 +49,40 @@ class ViewController: UIViewController {
             sealed = false
         } else {
             sender.image = UIImage(named: "envelope")
-            sealed = true
-            moveLetter(yTarget: letterView.frame.height-150)
+            sealEnvelope()
         }
         
         print("image changed")
     }
     
-    func moveLetter(yTarget: CGFloat){
-        // animate the letter - move down
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: .curveEaseInOut, animations: {
-            let x = self.letterView!.frame.origin.x
-            print("\(x)")
-            let location = CGPoint(x: x,y: yTarget)
-            self.letterView!.frame.origin = location
-        }, completion: nil)
+    // Animate the letter view vertically
+    func sealEnvelope(){
+        self.letterView.translatesAutoresizingMaskIntoConstraints = true // to change position despite autolayout
+        UIView.animate(withDuration: 2, delay: 0.0, options: .curveEaseInOut, animations: {
+            // Move letter up
+            self.letterView!.frame.origin.y += -250
+        }, completion: { (success:Bool) in
+            // Bring envelope to front
+            self.rootView.bringSubview(toFront: self.envelopeBackTop)
+            self.rootView.bringSubview(toFront: self.toolbar)
+            UIView.animate(withDuration: 1.0, animations: {
+                self.letterView!.frame.origin.y += self.letterView.frame.height + 60
+            }, completion: nil)
+        })
+        sealed = true
     }
+    
+    // Animate the letter view vertically
+    func unsealEnvelope(){
+    }
+    
+//    func sealLetter(){
+//        // Move letter up
+////        moveLetter(yTarget: letterView.frame.origin.y - 200)
+//        // Bring envelope top to front
+//        rootView.bringSubview(toFront: envelopeBackTop)
+//        // Move letter down into envelope
+////        moveLetter(yTarget: letterView.frame.origin.y + 400)
+//    }
     
 }
