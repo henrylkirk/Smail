@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,28 +19,28 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope_Back_Bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="C8b-4c-vr7">
-                                <rect key="frame" x="0.0" y="338" width="375" height="225"/>
+                                <rect key="frame" x="0.0" y="58" width="667" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="k0y-TP-zjC"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope_Back_Top.png" translatesAutoresizingMaskIntoConstraints="NO" id="TA4-8l-QIx">
-                                <rect key="frame" x="0.0" y="403" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="123" width="667" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="q93-yc-FEd"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yja-Ec-u12" customClass="LetterView" customModule="Smail" customModuleProvider="target">
-                                <rect key="frame" x="21" y="30" width="333" height="566"/>
+                                <rect key="frame" x="25" y="10" width="617" height="314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.29863980150000002" green="0.3777320341" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-JE-qWw">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="343" width="667" height="32"/>
                                 <items>
                                     <barButtonItem image="delete.png" id="29Q-05-2eA">
                                         <connections>
@@ -88,14 +88,128 @@
                         <outlet property="rootView" destination="8bC-Xf-vdC" id="ZrI-TQ-yxv"/>
                         <outlet property="toolbar" destination="EPb-JE-qWw" id="fgL-cw-9m3"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="k3g-XC-XDR"/>
+                        <segue destination="FZZ-Xh-xeg" kind="show" identifier="showEnvelope" id="Ol7-eR-gCJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="136.28185907046478"/>
         </scene>
+        <!--EnvelopeVC-->
+        <scene sceneID="edq-yD-Lg8">
+            <objects>
+                <viewController id="FZZ-Xh-xeg" customClass="EnvelopeVC" customModule="Smail" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oBJ-28-mer"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sai-RV-7fo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Psy-NR-Nbv">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StampOutline.png" translatesAutoresizingMaskIntoConstraints="NO" id="A7k-dB-uvW">
+                                <rect key="frame" x="517" y="20" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="2N6-cb-zVU"/>
+                                    <constraint firstAttribute="height" constant="130" id="Rt6-4L-T38"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sender Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JiA-Tu-Ljo">
+                                <rect key="frame" x="20" y="20" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="JwR-LA-JdP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sender Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-JP-0ae">
+                                <rect key="frame" x="20" y="50" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="M8Z-uB-6a2"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sender City, State Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wp0-a3-Ybs">
+                                <rect key="frame" x="20" y="80" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Fi8-Nw-2sH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nua-bc-gKI">
+                                <rect key="frame" x="171" y="232" width="324" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="tzN-dN-d58"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbH-Gl-4fo">
+                                <rect key="frame" x="171" y="263" width="324" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="BXg-j9-8fH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PLACE STAMP HERE" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT6-EL-ygs">
+                                <rect key="frame" x="501" y="7" width="164" height="156"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipient Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWo-x0-gSN">
+                                <rect key="frame" x="171" y="201" width="324" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="test">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="324" id="2fr-QO-dOV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14670509099960327" green="0.55746346712112427" blue="0.75727301836013794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JWo-x0-gSN" firstAttribute="centerX" secondItem="Psy-NR-Nbv" secondAttribute="centerX" id="7HG-Gs-3O8"/>
+                            <constraint firstItem="Nua-bc-gKI" firstAttribute="centerX" secondItem="Psy-NR-Nbv" secondAttribute="centerX" id="8fA-hg-qeM"/>
+                            <constraint firstAttribute="trailing" secondItem="A7k-dB-uvW" secondAttribute="trailing" constant="20" id="94H-8o-GXH"/>
+                            <constraint firstItem="JiA-Tu-Ljo" firstAttribute="leading" secondItem="Psy-NR-Nbv" secondAttribute="leading" constant="20" id="Fel-1G-u2V"/>
+                            <constraint firstItem="Nua-bc-gKI" firstAttribute="top" secondItem="JWo-x0-gSN" secondAttribute="bottom" constant="1" id="LAd-6p-KAL"/>
+                            <constraint firstItem="JiA-Tu-Ljo" firstAttribute="top" secondItem="oBJ-28-mer" secondAttribute="bottom" constant="20" id="Q8m-dx-tAC"/>
+                            <constraint firstItem="QbH-Gl-4fo" firstAttribute="top" secondItem="Nua-bc-gKI" secondAttribute="bottom" constant="1" id="Svh-O0-n6q"/>
+                            <constraint firstItem="wp0-a3-Ybs" firstAttribute="leading" secondItem="Psy-NR-Nbv" secondAttribute="leading" constant="20" id="VEK-F5-Xhn"/>
+                            <constraint firstItem="QbH-Gl-4fo" firstAttribute="centerX" secondItem="Psy-NR-Nbv" secondAttribute="centerX" id="W4L-vJ-Eik"/>
+                            <constraint firstItem="Sai-RV-7fo" firstAttribute="top" secondItem="QbH-Gl-4fo" secondAttribute="bottom" constant="82" id="YI9-X6-8CB"/>
+                            <constraint firstItem="RT6-EL-ygs" firstAttribute="centerX" secondItem="A7k-dB-uvW" secondAttribute="centerX" constant="1" id="aA7-n3-bP9"/>
+                            <constraint firstItem="wp0-a3-Ybs" firstAttribute="top" secondItem="bR0-JP-0ae" secondAttribute="bottom" id="aAR-VA-JIp"/>
+                            <constraint firstItem="bR0-JP-0ae" firstAttribute="leading" secondItem="Psy-NR-Nbv" secondAttribute="leading" constant="20" id="eeV-Ym-QiU"/>
+                            <constraint firstItem="A7k-dB-uvW" firstAttribute="top" secondItem="oBJ-28-mer" secondAttribute="bottom" constant="20" id="fYF-kI-vMX"/>
+                            <constraint firstItem="RT6-EL-ygs" firstAttribute="centerY" secondItem="A7k-dB-uvW" secondAttribute="centerY" id="n3T-h0-7Zp"/>
+                            <constraint firstItem="bR0-JP-0ae" firstAttribute="top" secondItem="JiA-Tu-Ljo" secondAttribute="bottom" id="w9L-Lq-gXS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="senderCity" destination="wp0-a3-Ybs" id="hxq-yJ-K1i"/>
+                        <outlet property="senderName" destination="JiA-Tu-Ljo" id="xEN-f8-D4B"/>
+                        <outlet property="senderStreetAddress" destination="bR0-JP-0ae" id="KwV-5U-daR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuP-f5-enV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876.61169415292363" y="136.80000000000001"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="StampOutline.png" width="1200" height="901"/>
         <image name="delete.png" width="32" height="32"/>
         <image name="envelope_Back_Bottom.png" width="717" height="639"/>
         <image name="envelope_Back_Top.png" width="716" height="416"/>

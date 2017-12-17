@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0B46E41FE5D033004E7F5F /* EnvelopeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B46E31FE5D033004E7F5F /* EnvelopeVC.swift */; };
+		2E0B46E61FE5DF98004E7F5F /* StampOutline.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E0B46E51FE5DF98004E7F5F /* StampOutline.png */; };
 		2E1866A21FD2FE96008E2CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1866A11FD2FE96008E2CF9 /* AppDelegate.swift */; };
 		2E1866A41FD2FE96008E2CF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1866A31FD2FE96008E2CF9 /* ViewController.swift */; };
 		2E1866A71FD2FE96008E2CF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1866A51FD2FE96008E2CF9 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E0B46E31FE5D033004E7F5F /* EnvelopeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeVC.swift; sourceTree = "<group>"; };
+		2E0B46E51FE5DF98004E7F5F /* StampOutline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StampOutline.png; sourceTree = "<group>"; };
 		2E18669E1FD2FE96008E2CF9 /* Smail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1866A11FD2FE96008E2CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E1866A31FD2FE96008E2CF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +75,6 @@
 				2E1866B61FD2FF2B008E2CF9 /* Assets */,
 				2E1866B31FD2FEC6008E2CF9 /* ViewControllers */,
 				2E1866A11FD2FE96008E2CF9 /* AppDelegate.swift */,
-				2E1866A31FD2FE96008E2CF9 /* ViewController.swift */,
 				2E1866A51FD2FE96008E2CF9 /* Main.storyboard */,
 				2E1866A81FD2FE96008E2CF9 /* Assets.xcassets */,
 				2E1866AA1FD2FE96008E2CF9 /* LaunchScreen.storyboard */,
@@ -84,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				2E1866B41FD2FEEA008E2CF9 /* LetterView.swift */,
+				2E1866A31FD2FE96008E2CF9 /* ViewController.swift */,
+				2E0B46E31FE5D033004E7F5F /* EnvelopeVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		2E1866B61FD2FF2B008E2CF9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2E0B46E51FE5DF98004E7F5F /* StampOutline.png */,
 				2E1866C51FD33D45008E2CF9 /* envelope_closed@2x.png */,
 				2E1866BD1FD3382E008E2CF9 /* envelope_Back_Bottom.png */,
 				2E1866BE1FD3382E008E2CF9 /* envelope_Back_Top.png */,
@@ -161,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0B46E61FE5DF98004E7F5F /* StampOutline.png in Resources */,
 				2E1866AC1FD2FE96008E2CF9 /* LaunchScreen.storyboard in Resources */,
 				2E1866BA1FD2FF44008E2CF9 /* envelope@2x.png in Resources */,
 				2E1866BF1FD3382E008E2CF9 /* envelope_Back_Bottom.png in Resources */,
@@ -182,6 +189,7 @@
 			files = (
 				2E1866A41FD2FE96008E2CF9 /* ViewController.swift in Sources */,
 				2E1866B51FD2FEEA008E2CF9 /* LetterView.swift in Sources */,
+				2E0B46E41FE5D033004E7F5F /* EnvelopeVC.swift in Sources */,
 				2E1866A21FD2FE96008E2CF9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +354,7 @@
 				2E1866B21FD2FE96008E2CF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
