@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class EnvelopeVC: UIViewController {
+class EnvelopeVC: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var senderCity: UITextField!
     @IBOutlet weak var senderStreetAddress: UITextField!
@@ -22,7 +22,36 @@ class EnvelopeVC: UIViewController {
         locationManager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
             locationManager!.requestWhenInUseAuthorization()
+            
         }
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.startUpdatingLocation()
+        locationManager?.delegate = self
+        
+        // prevent device from locking
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first! // first element in array - otherwise may change enroute
+        // Get user's address from location and set as initial sender address
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location, completionHandler: {placemark,error in
+            print(location)
+            if error == nil {
+                let place = placemark![0]
+                let country = place.isoCountryCode ?? "US"
+                let city = place.locality ?? "Rochester"
+                let zipcode = place.postalCode ?? "14623"
+                let number = place.subThoroughfare ?? "1"
+                let street = place.thoroughfare ?? "Lomb Memorial Dr"
+                let state = place.administrativeArea ?? "NY"
+                
+                // set sender textfield text
+                self.senderCity.text = "\(city), \(state) \(zipcode)"
+                self.senderStreetAddress.text = "\(number) \(street) \(country)"
+            }
+        })
     }
     
     override func viewDidLoad() {
@@ -36,28 +65,6 @@ class EnvelopeVC: UIViewController {
         let doubletap = UITapGestureRecognizer(target: self, action: #selector(EnvelopeVC.openEnvelope))
         doubletap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubletap)
-        
-        // Get user's address from location and set as initial sender address
-        if let location = locationManager?.location {
-            let geocoder = CLGeocoder()
-            geocoder.reverseGeocodeLocation(location, completionHandler: {placemark,error in
-                print("location worked")
-                print(location)
-                if error == nil {
-                    let place = placemark![0]
-                    let country = place.isoCountryCode ?? "US"
-                    let city = place.locality ?? "Rochester"
-                    let zipcode = place.postalCode ?? "14623"
-                    let number = place.subThoroughfare ?? "1"
-                    let street = place.thoroughfare ?? "Lomb Memorial Dr"
-                    let state = place.administrativeArea ?? "NY"
-                    
-                    // set sender textfield text
-                    self.senderCity.text = "\(city), \(state) \(zipcode)"
-                    self.senderStreetAddress.text = "\(number) \(street) \(country)"
-                }
-            })
-        }
     }
     
     // Dismiss keyboard
